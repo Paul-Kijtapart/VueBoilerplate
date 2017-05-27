@@ -1,4 +1,8 @@
-reated by https://www.gitignore.io/api/node
+# Paul's ignore list
+.DS_Store
+dist/
+
+# created by https://www.gitignore.io/api/node
 
 ### Node ###
 # Logs
