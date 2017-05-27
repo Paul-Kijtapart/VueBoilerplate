@@ -17,7 +17,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
@@ -36,6 +36,14 @@ module.exports = {
                         'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     }
                     // other vue-loader options go here
+                }
+            },
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
                 }
             }, {
                 test: /\.js$/,
@@ -56,15 +64,23 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    },
     plugins: [
         extractSass,
         // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
         new webpack.HotModuleReplacementPlugin()
     ],
+    performance: {
+        hints: false
+    },
     devServer: {
         port: 9000,
         contentBase: path.join(__dirname),
-        compress: true,
+        historyApiFallback: true,
         stats: 'errors-only',
         open: true,
         hot: true
