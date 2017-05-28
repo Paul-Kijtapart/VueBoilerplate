@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
+        "sourceMap": true, // Generates corresponding .map file.
         "strict": true,
         "noImplicitReturns": true,
         "allowSyntheticDefaultImports": true,
+        "suppressImplicitAnyIndexErrors": true, // Suppress --noImplicitAny errors for indexing objects lacking index signatures. 
+        "experimentalDecorators": true, // Enables experimental support for ES decorators.
         "module": "es2015",
         "target": "es5",
         "moduleResolution": "node",
@@ -15,5 +17,6 @@
     },
     "include": [
         "./src/**/*"
-    ]
+    ],
+    "compileOnSave": false
 }

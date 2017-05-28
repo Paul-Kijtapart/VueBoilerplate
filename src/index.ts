@@ -1,14 +1,10 @@
-import Vue from "vue";
+import Vue from 'vue'
+import App from './components/App.vue'
 
-
-let v = new Vue({
-    el: "#app",
-    template: `
-    <div>
-        <div>Hello {{name}}!</div>
-        Name: <input v-model="name" type="text">
-    </div>`,
-    data: {
-        name: "World"
-    }
-});
+// mount
+new Vue({
+    el: '#app',
+    render: h => h(App, {
+        props: { propMessage: 'World' }
+    })
+})

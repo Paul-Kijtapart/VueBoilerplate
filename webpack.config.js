@@ -7,6 +7,7 @@ const DIST = path.resolve(__dirname, "dist");
 const NODE_MODULES = path.resolve(__dirname, 'node_modules');
 
 // Pick mode
+console.log('Mode : ' + process.env.NODE_ENV);
 const isProd = process.env.NODE_ENV === "production";
 
 // Production
@@ -65,8 +66,9 @@ module.exports = {
         ]
     },
     resolve: {
+        extensions: ['.ts', '.js', '.vue', '.json'],
         alias: {
-            vue: 'vue/dist/vue.js'
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
     plugins: [
