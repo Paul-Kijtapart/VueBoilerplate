@@ -4,8 +4,8 @@
   "description": "dashboard with vuejs",
   "main": "index.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
+    "dw": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.prod.js"
   },
   "author": "paulnawat",
   "license": "ISC",

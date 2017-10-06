@@ -8,15 +8,15 @@ module.exports = {
         app: './src/index.js'
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        // new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             template: './index.html',
             inject: true
         })
     ],
     output: {
-        filename: "[name].[hash].js",
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, './dist'),
+        filename: "bundle.js",
     },
     module: {
         rules: [
