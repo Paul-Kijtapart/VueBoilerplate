@@ -4,8 +4,8 @@
   "description": "dashboard with vuejs",
   "main": "index.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack -p"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
   },
   "author": "paulnawat",
   "license": "ISC",
@@ -13,19 +13,23 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.1",
+    "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.5",
     "ts-loader": "^2.1.0",
     "typescript": "^2.3.3",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "vue-class-component": "^5.0.1",
     "vue-loader": "^12.1.1",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "vue": "^2.3.3",
