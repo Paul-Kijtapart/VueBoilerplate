@@ -1,4 +1,6 @@
 const path = require('path');
+const DIST = path.resolve(__dirname, "dist");
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
@@ -9,10 +11,13 @@ module.exports = merge(common, {
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        port: 8080,
-        contentBase: path.join(__dirname, "dist"),
+        port: 9000,
+        stats: {colors: true},
+        contentBase: DIST,
+        historyApiFallback: true,
         hot: true,
-        open: true
+        open: true,
+        stats: "errors-only"
     },
     performance: {
         hints: false

@@ -1,22 +1,22 @@
 const path = require('path');
+const SRC = path.resolve(__dirname, 'src');
+const DIST = path.resolve(__dirname, "dist");
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app: './src/index.js'
-    },
+    entry: path.join(SRC, 'index.js'),
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: "Common",
-            template: './index.html',
+            template: path.resolve(__dirname, "index.html"),
+            filename: './index.html',
             inject: true
         })
     ],
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: DIST,
         filename: "bundle.js",
     },
     module: {
